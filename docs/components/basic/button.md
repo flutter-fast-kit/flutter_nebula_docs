@@ -4,6 +4,7 @@ order: 2
 group:
   # path: /xxx/sdfsdf
   title: 通用
+  order: 1
 ---
 
 ## 介绍
@@ -137,3 +138,23 @@ NeButton(
   trailing: NeIcon(EvaIcons.star),
 )
 ```
+
+## Api
+
+| 参数     | 描述              | 类型  | 默认值 |
+| -------- | ----------------- | ----- | ------ |
+| size  | 尺寸 | [NeWidgetSize](/components/common/params#组件尺寸) | NeWidgetSize.medium |
+| status  | 类型 | [NeWidgetStatus](/components/common/params#状态) | null |
+| appearance  | 样式 | [NeWidgetAppearance](/components/common/params#样式) | null |
+| shape  | 边框 | [NeWidgetShape](/components/common/params#边框) | null |
+| onTap  | 回调事件, 如果为 `null` 则为禁用状态 | VoidCallback | null |
+| label  | 文字内容 | Widget | null |
+| leading  | 左侧内容 | Widget | null |
+| trailing  | 右侧内容 | Widget | null |
+| separatorWidth  | 分隔宽度 | double | null |
+| padding  | 内边距 | EdgeInsets | null |
+| itemAlignment  | 对齐方式 | MainAxisAlignment | null |
+| backgroundColor  | 背景颜色 | Color | null |
+| borderColor  | 边框颜色 | Color | null |
+| foregroundColor  | 前景色 | Color | null |
+| fluid  | 填充宽度 | bool | null |

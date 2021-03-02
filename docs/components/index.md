@@ -1,6 +1,6 @@
 ---
 title: 组件总览
-order: 2
+order: 0
 toc: menu
 nav:
   title: 组件
