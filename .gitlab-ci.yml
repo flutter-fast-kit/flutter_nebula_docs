@@ -1,0 +1,53 @@
+stages:
+  - build
+  - deploy
+  - clean
+
+cache:
+  paths:
+    - node_modules/
+
+# before_script:
+  # - npm install
+
+build:vuepress:
+  image: centos/node
+  stage: build
+  script:
+   - npm set registry https://registry.npm.taobao.org # 注册模块镜像
+   - npm set disturl https://npm.taobao.org/dist # node-gyp 编译依赖的 node 源码镜像
+   - npm config get registry
+   - npm set chromedriver_cdnurl http://cdn.npm.taobao.org/dist/chromedriver # chromedriver 二进制包镜像
+   - npm set operadriver_cdnurl http://cdn.npm.taobao.org/dist/operadriver # operadriver 二进制包镜像
+   - npm set phantomjs_cdnurl http://cdn.npm.taobao.org/dist/phantomjs # phantomjs 二进制包镜像
+   - npm set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass # node-sass 二进制包镜像
+   - npm set electron_mirror http://cdn.npm.taobao.org/dist/electron/ # electron 二进制包镜像
+   - npm install
+   - npm run docs:build
+  artifacts:
+    paths:
+     - docs-dist
+  only:
+    - master
+  tags:
+    - Ubuntu
+
+deploy:
+  stage: deploy
+  image: docker:latest
+  script:
+    - docker build -t flutter_nebula_docs .
+    - if [ $(docker ps -aq --filter name=flutter_nebula_docs) ]; then docker rm -f flutter_nebula_docs;fi
+    - docker run -d -p 19937:80 --name flutter_nebula_docs flutter_nebula_docs
+  tags:
+    - Ubuntu
+
+clean:
+  stage: clean
+  script:
+    - rm -fr docs-dist
+  only:
+    - master
+  when: always
+  tags:
+    - Ubuntu
