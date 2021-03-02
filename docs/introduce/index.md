@@ -9,7 +9,7 @@ nav:
 
 ## 什么是 Nebula？
 
-[![Pub](https://img.shields.io/pub/v/fk_logs.svg)](https://pub.dartlang.org/packages/fk_logs)  [![Awesome Flutter](https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square)]()  [![Awesome Flutter](https://img.shields.io/badge/Platform-Android_iOS-blue.svg?longCache=true&style=flat-square)]()  [![License](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE) 
+[![Pub](https://img.shields.io/pub/v/flutter_nubula.svg)](https://pub.dartlang.org/packages/flutter_nubula)  [![Awesome Flutter](https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square)]()  [![Awesome Flutter](https://img.shields.io/badge/Platform-Android_iOS-blue.svg?longCache=true&style=flat-square)]()  [![License](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE) 
 
 Nebula，中文发音**星云**，是一款基于Eva Design开发的Flutter组件库，为开发者提供一站式的组件开发体验。
 
@@ -40,5 +40,5 @@ environment:
 
 ```yaml
 dependencies:
-  fk_logs: <last_version>
+  flutter_nubula: <last_version>
 ```

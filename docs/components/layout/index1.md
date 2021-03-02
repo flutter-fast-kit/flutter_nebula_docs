@@ -1,7 +1,7 @@
 ---
-title: AppBar 导航栏
+title: Divider 分割线
 order: 2
 group:
   # path: /xxx/sdfsdf
-  title: 导航
+  title: 布局
 ---
