@@ -11,9 +11,9 @@ export default defineConfig({
   navs: {
     'zh-CN': [
       null,
-      { title: '演示', path: 'http://192.168.1.39:19911/' },
-      { title: 'GitLab', path: 'http://gitlab.tqxd.com/aitd_exchange/aitd_exchange_mobile/flutter/flutter_nebula' },
-      { title: '更新日志', path: 'http://gitlab.tqxd.com/aitd_exchange/aitd_exchange_mobile/flutter/flutter_nebula' },
+      { title: '演示', path: 'https://flutter-nebula.surge.sh/' },
+      { title: 'Github', path: 'https://github.com/flutter-fast-kit/flutter_nebula' },
+      { title: '更新日志', path: 'https://github.com/flutter-fast-kit/flutter_nebula/blob/master/CHANGELOG.md' },
     ],
   },
 });
