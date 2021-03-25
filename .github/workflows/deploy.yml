@@ -1,0 +1,26 @@
+
+name: DeployDocWeb
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.1.5
+        with:
+          # Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0
+          node-version: 14.x
+      - run: yarn
+      - run: npm run docs:build
+      - name: Publish to surge.sh
+        uses: dswistowski/surge-sh-action@v1.0.1
+        with:
+          domain: flutter-nebula-doc.surge.sh
+          login: ${{ secrets.SURGE_LOGIN }}
+          token: ${{ secrets.SURGE_TOKEN }}
+          project: docs-dist
